@@ -1,0 +1,33 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $text-color;
+  background-color: $background-color;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+
+  &:hover {
+    color: $primary-hover;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: $font-family;
+}

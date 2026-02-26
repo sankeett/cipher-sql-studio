@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: ciphersql_sandbox
+    environment:
+      POSTGRES_USER: ${SANDBOX_DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${SANDBOX_DB_PASSWORD:-postgres}
+      POSTGRES_DB: ${SANDBOX_DB_NAME:-sandbox}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
